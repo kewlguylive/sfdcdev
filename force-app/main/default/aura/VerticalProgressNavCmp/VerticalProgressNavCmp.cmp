@@ -1,0 +1,50 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="displayNav" type="boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-progress slds-progress_vertical">
+        <ol class="slds-progress__list">
+            <aura:if isTrue="{!v.displayNav}">
+                  <li aura:id="nav1" class="slds-progress__item slds-is-completed">
+                    <div class="slds-icon_container slds-icon-utility-success slds-progress__marker slds-progress__marker_icon slds-progress__marker_icon-success" title="Complete">
+                     <lightning:icon iconName="utility:success" size="x-small"></lightning:icon> 
+                    <span class="slds-assistive-text">Complete</span>
+                    </div>
+                    <div class="slds-progress__item_content slds-grid slds-grid_align-spread">Step 1</div>
+                   </li>
+               <aura:set attribute="else">
+                   <li aura:id="nav1" class="slds-progress__item">
+                    <div class="slds-progress__marker">
+                    <span class="slds-assistive-text">Step</span>
+                    </div>
+                    <div class="slds-progress__item_content slds-grid slds-grid_align-spread">Step 1</div>
+                    </li>
+                </aura:set>
+            </aura:if>
+            <li aura:id="nav2" class="slds-progress__item slds-is-active">
+            <div class="slds-progress__marker">
+            <span class="slds-assistive-text">Active</span>
+            </div>
+            <div class="slds-progress__item_content slds-grid slds-grid_align-spread">Step 2</div>
+            </li>
+            <li aura:id="nav3" class="slds-progress__item">
+            <div class="slds-progress__marker"></div>
+            <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
+                <lightning:button variant="base" label="Step 3" title="Base action" onclick="{! c.handleClick }"/>
+                
+             </div>
+            </li>
+            <li aura:id="nav4" class="slds-progress__item">
+            <div class="slds-progress__marker"></div>
+            <div class="slds-progress__item_content slds-grid slds-grid_align-spread">Step 4</div>
+            </li>
+            <li aura:id="nav5" class="slds-progress__item">
+            <div class="slds-progress__marker"></div>
+            <div class="slds-progress__item_content slds-grid slds-grid_align-spread">Step 5</div>
+            </li>
+        </ol>
+        <div aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" role="progressbar">
+           <span class="slds-assistive-text">Progress: 25%</span>
+        </div>
+</div>
+</aura:component>

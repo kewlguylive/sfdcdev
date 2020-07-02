@@ -1,0 +1,16 @@
+<apex:page applyBodyTag="false" showHeader="false" controller="HealthApplicationPdf" title="Health PDF" cache="false" renderAs="pdf" contentType="application/pdf#hAppReport.pdf">
+
+<apex:outputText value="{!haForm.Account_Name__c}" />
+
+<apex:outputText value="{!haForm.Applicant__c}" />
+
+
+<apex:outputText value="{!haForm.Name__c}" />
+
+<apex:outputText value="{!haForm.NPP_Selected__c}" />
+
+<apex:outputText value="{!haForm.OptOut__c}" />
+
+<apex:outputText value="{!haForm.State__c}" />
+
+</apex:page>

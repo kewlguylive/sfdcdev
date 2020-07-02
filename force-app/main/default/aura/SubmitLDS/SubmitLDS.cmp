@@ -1,0 +1,36 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+	<div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-large-size_1-of-6 slds-medium-size_3-of-12 slds-small-size_1-of-1 slds-m-left_large"></div>
+        <div class="slds-col slds-large-size_4-of-6 slds-medium-size_6-of-12 slds-small-size_1-of-1 slds-box slds-m-bottom_large slds-m-left_large">
+          <p class="slds-m-bottom_large">
+            I have read the contents of this submission. By submitting this Form, I certify that the 
+              information contained herein is true, accurate, and complete, and I authorize the Centers 
+              for Medicare &amp; Medicaid Services (CMS) to verify this information. If I become aware
+              that any information in this Form is not true, accurate, or complete, I will notify CMS 
+              of this fact immediately. I understand that the knowing omission, misrepresentation, or 
+              falsification of any information contained in this document or in any communication supplying 
+              information to CMS may be punished by criminal, civil, or administrative penalties, including 
+              fines, civil damages and/or imprisonment.
+            
+              <div class="slds-m-bottom_large">
+                  <div class="slds-form-element">
+                          <label class="slds-form-element__label" for="text-input-id-1">
+                            <strong>Enter your First and Last Name</strong></label>
+                          <div class="slds-form-element__control">
+                            <input type="text" id="text-input-id-1" placeholder="" required="" class="slds-input" />
+                          </div>
+                  </div>
+                 
+              </div>
+            
+            
+          </p>
+        
+        
+        
+           <lightning:button variant="brand" type="button" name="Submit" label="Submit" onclick="{!c.handleSubmitApplication}" />
+        </div>
+        <div class="slds-col slds-large-size_1-of-6 slds-medium-size_3-of-12 slds-small-size_1-of-1 slds-m-bottom_large"></div>
+        
+    </div>
+</aura:component>

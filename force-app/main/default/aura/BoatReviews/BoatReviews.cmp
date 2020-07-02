@@ -1,0 +1,74 @@
+<aura:component description="BoatReviews" controller="BoatReviews">
+
+    <!--Attributes-->
+    <aura:attribute name="boat" type="Boat__c" description="Instance of the Boat object" />
+    <aura:attribute name="boatReviews" type="BoatReview__c[]" access="private" description="List of boat reviews" />
+    <!--Attributes-->
+
+    <!--Handlers-->
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:handler name="change" action="{!c.doInit}" value="{!v.boat}"/>
+    <!--Handlers-->
+
+    <!--Methods-->
+    <aura:method name="refresh" action="{!c.doInit}" access="public" description=""/>
+    <!--Methods-->
+
+    <div class="slds-feed">
+        <ul class="slds-feed__list">
+            <!--Scrollable container of boatReviews-->
+            
+            <ui:scrollerWrapper class="scrollerSize">
+        <!--Scrollable content here -->
+        <aura:if isTrue="{!v.boatReviews.length==0}">
+            <lightning:layoutItem class="slds-align_absolute-center" flexibility="auto" padding="around-small">   
+                <ui:outputText value="No Reviews Available" />
+            </lightning:layoutItem>
+        </aura:if>
+        <div class="slds-feed" style="max-height: 250px;">
+            <ul class="slds-feed__list">
+                <aura:iteration items="{!v.boatReviews}" var="boatReview">
+                    <li class="slds-feed__item">
+                         <header class="slds-post__header slds-media">
+          
+          <div class="slds-media__body">
+            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+              
+                
+                <a href="javascript:void(0)" onclick="{!c.onUserInfoClick}" data-userid="{!boatReview.CreatedBy.Id}">
+                     {!boatReview.CreatedBy.Name}</a>
+                 &nbsp; &mdash; &nbsp; {!boatReview.CreatedBy.CompanyName}
+                
+            </div>
+            <p class="slds-text-body_small"><lightning:formattedDateTime value="{!boatReview.CreatedDate}" 
+                                   year="numeric" month="short" day="numeric"  
+                                   hour="2-digit" minute="2-digit" hour12="true"/></p>
+          </div>
+        </header>
+        <div class="slds-post__content slds-text-longform">
+          <div>
+             <ui:outputText value="{!boatReview.Name}" />              
+          </div>
+          <div>
+            <ui:outputRichText class="slds-text-longform"  value="{!boatReview.Comment__c}" />
+                            
+          </div>
+        </div>
+        <footer class="slds-post__footer">
+          <ul class="slds-post__footer-actions-list slds-list_horizontal">
+            <li class="slds-col slds-item slds-m-right_medium">
+                <c:FiveStarRating aura:id="FiveStarRating" value="{!boatReview.Rating__c}" readonly="true"/>
+
+            </li>
+    	</ul>
+
+</footer>
+                    </li>
+                </aura:iteration>
+            </ul>
+        </div>
+    </ui:scrollerWrapper>
+        </ul>
+    </div>
+
+</aura:component>

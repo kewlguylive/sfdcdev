@@ -1,0 +1,18 @@
+<apex:page controller="displayOptOut">
+    <apex:form id="masterform">
+    <apex:pageBlock title="OO Details">
+        <apex:pageblockSection title="OO Information">
+            
+            <apex:outputField value="{!hApp.Name}"/>
+        <apex:selectList value="{!selOption}" multiselect="false" size="1">
+           <apex:actionSupport event="onchange" action="{!setOptOut}" reRender="masterform"/>
+            <apex:selectOptions value="{!regions}">
+            </apex:selectOptions>
+        </apex:selectList>
+        </apex:pageblockSection>
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save OO" action="{!save}"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

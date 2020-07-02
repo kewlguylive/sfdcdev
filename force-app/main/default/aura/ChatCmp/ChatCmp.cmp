@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+  <ltng:require
+        scripts="{!join(',',
+                            $Resource.ChatScript01,
+                            $Resource.ChatScript02)}"
+        afterScriptsLoaded="{!c.scriptsLoaded}" />  
+    
+	
+</aura:component>

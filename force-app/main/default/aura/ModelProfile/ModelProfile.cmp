@@ -1,0 +1,3 @@
+<aura:component implements="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" controller="healthAppAuraController" access="global">
+	
+</aura:component>

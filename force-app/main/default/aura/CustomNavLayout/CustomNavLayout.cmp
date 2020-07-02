@@ -1,0 +1,48 @@
+<aura:component implements="forceCommunity:themeLayout" extends="forceCommunity:navigationMenuBase">
+  
+    
+   <div class="slds-grid slds-grid--align-center">
+        <div class="slds-col">
+            <div class="slds-grid slds-grid--vertical">
+                <div class="slds-col">
+                <!-- placeholder for logo -->
+                </div>
+                <div class="slds-col">
+                   
+                </div>
+                <div class="slds-col">   
+                    <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+                       <ul onclick="{!c.onClick}">
+                           <li class="slds-is-active">
+                                   <a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset">
+                                       Organization Profile
+                                   </a>
+                           </li>
+                           <li class="">
+                                   <a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset">
+                                       Application
+                                   </a>
+                           </li>
+                           <li class="">
+                                   <a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset">
+                                       Upload/Download
+                                   </a>
+                           </li>
+                           <li class="">
+                                   <a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset">
+                                       Support
+                                   </a>
+                           </li>
+                       </ul>
+                   </div>                      
+                </div>
+                <div class="slds-col">
+                    {!v.sidebarFooter}
+                </div>
+            </div>
+        </div>
+    <div class="slds-col content">
+            {!v.body}
+    </div>
+</div>
+</aura:component>

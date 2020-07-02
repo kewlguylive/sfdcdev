@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+	<div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+            
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="Tab1" type="String" default="tab1" />
+    <aura:attribute name="Tab2" type="String" default="tab2" />
+    <aura:attribute name="Tab3" type="String" default="tab2" />
+    <aura:attribute name="isOrgInfo" type="boolean" default="true" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+            <lightning:tabset variant="default" selectedTabId="tab1" >
+            <lightning:tab label="ORGANIZATION INFORMATION" aura:id="tab1" tabindex="1" id="tab1" title="Organization Information">
+                 <c:AppProfileLDS />
+            </lightning:tab>
+             
+            <lightning:tab label="CONTACTS" aura:id="tab2" tabindex="2" id="tab2" title="Contacts">
+                 <c:DatatableLtng />
+            </lightning:tab>  
+             
+        </lightning:tabset>
+        </div>
+    </div>
+    
+</aura:component>

@@ -1,0 +1,60 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="recordId" type="String" />
+
+     <!--Attributes-->
+    <aura:attribute name="reloadForm" type="boolean" default="true" />
+    <aura:attribute name="newHealthApp" type="HealthApplication__c"
+         default="{ 'sobjectType': 'HealthApplication__c',
+                        'Self_Certfication_Details__c': '',
+                        'Monetary_Requirements__c': ''}"/>
+     
+    <!--Component Start-->
+    <div class="slds-m-around_xx-large">
+        <lightning:recordEditForm objectApiName="HealthApplication__c"
+                                  recordId="a0FB0000003Y9Er"
+                                  aura:id="hApp"
+                                  onload="{!c.handleOnLoad}"
+                                  onsubmit="{!c.handleOnSubmit}"
+                                  onsuccess="{!c.handleOnSuccess}"
+                                  onerror="{!c.handleOnError}">
+            
+            <lightning:messages />
+            <aura:if isTrue="{!v.reloadForm}">
+                 <div class="slds-grid slds-wrap">
+                     <div class="slds-col slds-large-size_8-of-12 slds-medium-size_6-of-12 slds-small-size_1-of-1 slds-box slds-m-bottom_large">
+                        <div class="slds-m-bottom_large">
+                         <span><label class="slds-form-element__label slds-text-heading_small" for="unique-id-of-input">01. Account Name </label></span>
+                         <span><lightning:inputField variant="label-hidden" fieldName="Account_Name__c" /></span>
+                        </div>
+                         
+                        <div class="slds-m-bottom_large">
+                            <span><label class="slds-form-element__label slds-text-heading_small" for="unique-id-of-input">02. Please mention the self certification details of your company along with the details regarding the access and ability to self fund your account through entire program of Model RFA ?</label></span>
+                            <span><lightning:inputField variant="label-hidden" fieldName="Self_Certfication_Details__c"/></span>
+                         </div>
+                         
+                         <div class="slds-m-bottom_large">
+                             <span><label class="slds-form-element__label slds-text-heading_small" for="unique-id-of-input">03. Please describe your monetary Estimated Payment Accounts related to the Program and related expense sheet during option year 1 for Model RFA and because you are obligated to make sure you comply with all Federal Liability Implications pleae submit the required documents to be held accountable.</label></span>
+                             <span><lightning:inputField variant="label-hidden" fieldName="Monetary_Requirements__c"/></span>
+                         </div>
+                         
+                         <div class="slds-m-bottom_large">
+                             <span><label class="slds-form-element__label slds-text-heading_small" for="unique-id-of-input">04. Beginning in PY1 (CY2021), Professional and Global DCEs may not simultaneously participate in the Shared Savings Program, a model tested or expanded under section 1115A of the Social Security Act that involves shared savings, or any other Medicare initiative that involves shared savings. Please confirm that the DCE will not be simultaneously participating in another Medicare shared savings initiative while participating in the Direct Contracting, beginning in PY1.</label></span>
+                             <span><lightning:inputField variant="label-hidden" fieldName="Monetary_Requirements__c"/></span>
+                         </div>
+                         
+                      </div>
+                 </div>
+                <aura:set attribute="else">
+                    Saving...
+                </aura:set>
+            </aura:if>
+            
+        </lightning:recordEditForm>
+        <div class="slds-col slds-size_12-of-12">
+                        <span></span>
+                      </div>
+         <lightning:button variant="brand" type="button" name="Save" label="Save" onclick="{!c.handleCreateApplication}" />
+    </div>
+    <!--Component End-->
+    
+</aura:component>

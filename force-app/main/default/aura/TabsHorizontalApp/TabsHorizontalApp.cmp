@@ -1,0 +1,38 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="Tab1" type="String" default="tab1" />
+    <aura:attribute name="Tab2" type="String" default="tab2" />
+    <aura:attribute name="Tab3" type="String" default="tab3" />
+    <aura:attribute name="Tab4" type="String" default="tab4" />
+    <aura:attribute name="Tab5" type="String" default="tab5" />
+    <aura:attribute name="currentStepInd" type="Integer" default="1"/>
+    <aura:attribute name="isProgressing" type="Boolean" default="false"/>
+    <aura:attribute name="newHealthApp" type="HealthApplication__c"
+         default="{ 'sobjectType': 'HealthApplication__c',
+                        'Self_Certfication_Details__c': '',
+                        'Monetary_Requirements__c': ''}"/>
+    
+    <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+              <lightning:tabset variant="default" selectedTabId="tab1">
+                
+                <c:LightningPathCmp />
+                  
+                <lightning:tab label="NWT RFA" aura:id="tab1" tabindex="1" id="tab1" title="NWT RFA">
+                    <c:AppProfileLDS />
+                </lightning:tab> 
+                    
+                <lightning:tab label="LEADERSHIP MANAGEMENT" aura:id="tab2" tabindex="2" id="tab2" title="LEADERSHIP MANAGEMENT">
+                    <c:AppProfileLDS />
+                </lightning:tab> 
+                    
+                <lightning:tab label="CLINICAL CARE MODEL" aura:id="tab3" tabindex="3" id="tab3" title="CLINICAL CARE MODEL">
+                    <c:AppProfileLDS />
+                </lightning:tab> 
+                    
+                <lightning:tab label="FINANCIAL EXPERIENCE" aura:id="tab5" tabindex="5" id="tab5" title="FINANCIAL EXPERIENCE">
+                    <c:AppProfileLDS />
+                </lightning:tab> 
+            </lightning:tabset>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,42 @@
+<aura:component  implements="force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+   <aura:attribute name="IsProfile" type="Boolean" default="false"/>
+    <aura:attribute name="disActive" type="string" default=""/>
+    
+    <div class="slds-grid slds-wrap slds-gutters">
+       <div class="slds-col slds-large-size_1-of-6 slds-medium-size_1-of-2 slds-small-size_1-of-1 slds-m-right_large"></div>
+       
+          <div aura:id="profiletab" class="slds-col slds-large-size_1-of-6 slds-medium-size_1-of-2 slds-small-size_1-of-1 slds-box slds-m-right_large">
+              <span><lightning:icon iconName="action:new_person_account"  alternativeText="profile" title="Profile" />
+                       <span class="slds-text-heading--small slds-p-left_small">Complete Profile</span>
+               </span>
+               <aura:if isTrue="{!v.disActive == 'spike'}">
+                   <div aura:id="prospan" class="slds-align--absolute-center">Editing</div>
+               </aura:if>
+              
+             <div aura:id="prolink" class="slds-align--absolute-center"><a href="/CustomModel/s/orginfo" onclick="{!c.changeDivColor}">Organization Info</a></div>
+           </div>
+        
+       <div aura:id="tab2" class="slds-col slds-large-size_1-of-6 slds-medium-size_1-of-2 slds-small-size_1-of-1 slds-box slds-m-right_large">
+              <span><lightning:icon iconName="action:new_note"  alternativeText="Application" title="Application" />
+                   <span class="slds-text-heading--small slds-p-left_small">Application</span>
+              </span>
+           <div class="slds-align--absolute-center"><a href="/CustomModel/s/application">Application</a></div>
+       </div>
+       
+       <div aura:id="tab3" class="slds-col slds-large-size_1-of-6 slds-medium-size_1-of-2 slds-small-size_1-of-1 slds-box slds-m-right_large">
+              <span><lightning:icon iconName="action:upload"  alternativeText="files" title="Files" />
+                  <span class="slds-text-heading--small">Upload/Download</span>
+              </span>
+           <div class="slds-align--absolute-center"><a href="/CustomModel/s/files">Files</a></div>
+       </div>
+       
+       <div aura:id="tab4" class="slds-col slds-large-size_1-of-6 slds-medium-size_1-of-2 slds-small-size_1-of-1 slds-box slds-m-right_large">
+              <span><lightning:icon iconName="action:check"  alternativeText="certify" title="certify" />
+                  <span class="slds-text-heading--small slds-p-left_small">Certify/Submit</span>
+              </span>
+           <div class="slds-align--absolute-center"><a href="/CustomModel/s/submit">Submit</a></div>
+       </div>
+       <div class="slds-col slds-large-size_1-of-6 slds-medium-size_1-of-2 slds-small-size_1-of-1"></div>
+     
+    </div>
+</aura:component>

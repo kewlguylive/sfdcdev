@@ -1,0 +1,126 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="recordId" type="String" />
+
+     <!--Attributes-->
+    <aura:attribute name="reloadForm" type="boolean" default="true" />
+    <aura:attribute name="newHealthApp" type="HealthApplication__c"
+         default="{ 'sobjectType': 'HealthApplication__c',
+                        'Self_Certfication_Details__c': '',
+                        'Monetary_Requirements__c': ''}"/>
+    
+    
+    <div class="slds-grid slds-wrap slds-gutters">
+     <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+      <lightning:tabset variant="vertical" selectedTabId="two">
+        <lightning:tab label="Home" id="one">
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-large-size_1-of-6 slds-medium-size_3-of-12 slds-small-size_1-of-1"></div>
+                <div class="slds-col slds-large-size_4-of-6 slds-medium-size_6-of-12 slds-small-size_1-of-1 slds-box slds-m-bottom_large slds-m-left_large">
+                  <p class="slds-m-bottom_large">
+                    I have read the contents of this submission. By submitting this Form, I certify that the 
+                      information contained herein is true, accurate, and complete, and I authorize the Centers 
+                      for Medicare &amp; Medicaid Services (CMS) to verify this information. If I become aware
+                      that any information in this Form is not true, accurate, or complete, I will notify CMS 
+                      of this fact immediately. I understand that the knowing omission, misrepresentation, or 
+                      falsification of any information contained in this document or in any communication supplying 
+                      information to CMS may be punished by criminal, civil, or administrative penalties, including 
+                      fines, civil damages and/or imprisonment.Medicaid Services (CMS) to verify 
+                      this information. If I become aware that any information in this Form is not true, accurate, 
+                      or complete, I will notify CMS of this fact immediately.  
+                  </p>
+                
+                           
+                
+                  
+                </div>
+                
+                <div class="slds-col slds-large-size_1-of-6 slds-medium-size_3-of-12 slds-small-size_1-of-1 slds-m-bottom_large"></div>
+                
+                <div class="slds-col slds-large-size_1-of-6 slds-medium-size_3-of-12 slds-small-size_1-of-1 slds-m-left_large"></div>
+                <div class="slds-col slds-large-size_4-of-6 slds-medium-size_6-of-12 slds-small-size_1-of-1 slds-m-bottom_large slds-m-left_large">
+                    <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12"></div>
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered">
+                <thead>
+                <tr class="slds-text-title_caps">
+                <th scope="col"><div class="slds-truncate" title="Close Date">LOI #</div></th>
+                <th scope="col"><div class="slds-truncate" title="Account Name">RFA ID #</div></th>
+                <th scope="col"><div class="slds-truncate" title="Stage">Status</div></th>
+                <th scope="col"><div class="slds-truncate" title="Confidence">Email</div></th>
+                <th scope="col"><div class="slds-truncate" title="Contact">Action</div></th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                  <tr class="slds-hint-parent">
+                    <th scope="row" data-label="Opportunity Name">
+                    <div class="slds-truncate" title="Cloudhub">NWT-LOI-1095</div>
+                    </th>
+                    <td data-label="Account Name">
+                    <div class="slds-truncate" title="Cloudhub">NWT-RFA-1095</div>
+                    </td>
+                    <td data-label="Prospecting">
+                    <div class="slds-truncate" title="Prospecting">InProgress</div>
+                    </td>
+                    <td data-label="Confidence">
+                        <div class="slds-truncate" title="20%">info@newwave.io</div>
+                    </td>
+                    <td data-label="Contact">
+                    <div class="slds-truncate" title="application"><button class="slds-button slds-button_brand" onclick="{!c.handleClick}">Edit</button></div>
+                    </td>
+                  </tr>
+                
+                    <tr class="slds-hint-parent">
+                        <th scope="row" data-label="Opportunity Name">
+                        <div class="slds-truncate" title="Cloudhub + Anypoint Connectors">NWT-LOI-1096</div>
+                        </th>
+                        <td data-label="Account Name">
+                        <div class="slds-truncate" title="Cloudhub">NWT-LOI-1096</div>
+                        </td>
+                        <td data-label="Prospecting">
+                        <div class="slds-truncate" title="Prospecting">InProgress</div>
+                        </td>
+                        <td data-label="Confidence">
+                        <div class="slds-truncate" title="20%">info@cloudera.com</div>
+                        </td>
+                        <td data-label="Contact">
+                        <div class="slds-truncate" title="Action"><button class="slds-button slds-button_brand" onclick="{!c.handleClick}">Edit</button></div>
+                        </td>
+                    </tr>
+
+               </tbody>
+            </table>
+        </div>
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12"></div>
+    </div>
+                </div>
+                <div class="slds-col slds-large-size_1-of-6 slds-medium-size_3-of-12 slds-small-size_1-of-1 slds-m-bottom_large"></div>
+            </div>
+        </lightning:tab>
+        <lightning:tab label="Organization Information" id="two">
+             <c:AppProfileLDS />
+        </lightning:tab>
+        <lightning:tab label="Contacts" id="three">
+             <c:DatatableLtng />
+        </lightning:tab>
+        <lightning:tab label="Leadership Management" id="four">
+            <c:AppProfileLDS />
+        </lightning:tab>
+        <lightning:tab label="Financial Experience" id="five">
+            <c:AppProfileLDS />
+        </lightning:tab>
+        <lightning:tab label="Patient Centerdness" id="six">
+            <c:AppProfileLDS />
+        </lightning:tab>
+          <lightning:tab label="Upload/Download Files" id="seven">
+            
+        </lightning:tab>
+        <lightning:tab label="Certify and Submit" id="eight">
+            <c:SubmitLDS />
+        </lightning:tab>
+      </lightning:tabset>
+     </div>
+    </div>
+</aura:component>

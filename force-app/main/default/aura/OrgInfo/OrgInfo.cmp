@@ -1,0 +1,41 @@
+<aura:component  implements="force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+	 <div class="row">
+        <h2 class="header">Custom Entity Organization Profile</h2>
+        <lightning:input name="input1" label="Enter some text" />
+        <lightning:input name="input2" label="Text field with predefined value" value="initial value"/>
+        <lightning:input name="input3" label="Text field with a placeholder" placeholder="type here..."/>
+    </div>
+
+    <div class="row">
+        <h2 class="header">Provider List Information</h2>
+        <lightning:input name="input4" readonly="true" value="initial value" label="Read-only text field with a predefined value" />
+        <lightning:input name="input5" disabled="true" value="initial value" label="Disabled text field with a predefined value" />
+        <lightning:input name="input6" required="true" value="0123456789" label="Required text field with a maximum length of 10" maxlength="10" />
+        <lightning:input name="input7" label="Text field that handles the onfocus and onblur events" onfocus="{! c.handleFocus }" onblur="{! c.handleBlur }" />
+    </div>
+
+    <aura:attribute name="firstName" type="String"/>
+    <div class="row">
+        <h2 class="header">Participant Template Info</h2>
+        <lightning:input name="input8" value="{! v.firstName }" placeholder="type your first name..." label="Text field with attribute binding" />
+        <p>
+            FirstName: {! v.firstName }
+        </p>
+    </div>
+    
+    <div class="row">
+        <h2 class="header">Self Certification</h2>
+        <lightning:input name="input4" readonly="true" value="initial value" label="Read-only text field with a predefined value" />
+        <lightning:input name="input5" disabled="true" value="initial value" label="Disabled text field with a predefined value" />
+        <lightning:input name="input6" required="true" value="0123456789" label="Required text field with a maximum length of 10" maxlength="10" />
+        <lightning:input name="input7" label="Text field that handles the onfocus and onblur events" onfocus="{! c.handleFocus }" onblur="{! c.handleBlur }" />
+    </div>
+    
+    <div class="row">
+        <h2 class="header">Organization Address</h2>
+        <lightning:input name="input4" readonly="true" value="initial value" label="Read-only text field with a predefined value" />
+        <lightning:input name="input5" disabled="true" value="initial value" label="Disabled text field with a predefined value" />
+        <lightning:input name="input6" required="true" value="0123456789" label="Required text field with a maximum length of 10" maxlength="10" />
+        <lightning:input name="input7" label="Text field that handles the onfocus and onblur events" onfocus="{! c.handleFocus }" onblur="{! c.handleBlur }" />
+    </div>
+</aura:component>

@@ -1,0 +1,19 @@
+.THIS {
+   
+}
+
+.THIS.c-container {
+    margin: 10px 0 0px 0;
+    padding-left: 300px;
+}
+
+.THIS .custom-box {
+    text-align: center;
+    background-color: #f4f6f9;
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+}
+
+.THIS .ChangeBg {
+    border-color: red;
+}

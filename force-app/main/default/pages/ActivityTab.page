@@ -1,0 +1,5 @@
+<apex:page lightningStyleSheets="true">
+<div class="slds-scope">
+<apex:enhancedList type="Activity" height="600" />
+</div>
+</apex:page>

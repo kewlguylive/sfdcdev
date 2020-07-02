@@ -1,0 +1,61 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+	
+ <div class="slds-grid slds-wrap slds-gutters">
+   <div class="slds-col slds-small-size_1-of-1 slds-medium-size_4-of-6 slds-large-size_8-of-12">
+    <div class="slds-path slds-path_has-coaching slds-is-expanded slds-m-top_small slds-m-left_x-large">
+    <div class="slds-grid slds-path__track">
+    <div class="slds-grid slds-path__scroller-container">
+      <div class="slds-path__scroller" role="application">
+        <div class="slds-path__scroller_inner">
+          <ul class="slds-path__nav" role="listbox" aria-orientation="horizontal">
+            <li class="slds-path__item slds-is-complete" role="presentation">
+              <a aria-selected="false" class="slds-path__link" href="javascript:void(0);" id="path-6" role="option" tabindex="-1">
+                <span class="slds-path__stage">
+                  <lightning:icon iconName="action:check" size="xx-small" alternativeText="Indicates approval"/>
+                  <span class="slds-assistive-text">Stage Complete</span>
+                </span>
+                <span class="slds-path__title">NWT RFA</span>
+              </a>
+            </li>
+            <li class="slds-path__item slds-is-complete" role="presentation">
+              <a aria-selected="false" class="slds-path__link" href="javascript:void(0);" id="path-7" role="option" tabindex="-1">
+                <span class="slds-path__stage">
+                  <lightning:icon iconName="action:check" size="xx-small" alternativeText="Indicates approval"/>
+                  <span class="slds-assistive-text">Stage Complete</span>
+                </span>
+                <span class="slds-path__title">LEADERSHIP MANAGEMENT</span>
+              </a>
+            </li>
+            <li class="slds-path__item slds-is-complete" role="presentation">
+              <a aria-selected="false" class="slds-path__link" href="javascript:void(0);" id="path-8" role="option" tabindex="0">
+                <span class="slds-path__stage">
+                  <lightning:icon iconName="action:check" size="xx-small" alternativeText="Indicates approval"/>
+                  <span class="slds-assistive-text">Current Stage:</span>
+                </span>
+                <span class="slds-path__title">CLINICAL CARE MODEL</span>
+              </a>
+            </li>
+            <li class="slds-path__item slds-is-incomplete" role="presentation">
+              <a aria-selected="false" class="slds-path__link" href="javascript:void(0);" id="path-09" role="option" tabindex="-1">
+                <span class="slds-path__stage">
+                  <lightning:icon iconName="action:check" size="xx-small" alternativeText="Indicates approval"/>
+                </span>
+                <span class="slds-path__title">FINANCIAL EXPERIENCE</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+     <!--<div class="slds-grid slds-path__action">
+      <span class="slds-path__stage-name">Stage: Unqualified</span>
+      <button class="slds-button slds-button_brand slds-path__mark-complete">
+        <lightning:icon iconName="action:check" size="xx-small" alternativeText="Indicates approval"/>
+          Mark Status as Complete</button>
+    </div> -->
+  </div>
+</div>
+   </div>
+ </div>
+
+</aura:component>

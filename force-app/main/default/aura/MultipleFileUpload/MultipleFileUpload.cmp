@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForAllPageTypes" access="global">
+<aura:attribute name="FileList" type="Object"/>
+<lightning:input aura:id="file-input" type="file" files="{!v.FileList}" label="Files" 
+                 name="file" multiple="true" onchange="{! c.handleFilesChange }"/>
+</aura:component>

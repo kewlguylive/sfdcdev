@@ -1,0 +1,54 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+   
+    
+   <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+          <img alt="CMS" src="{!$Resource.cms}" title="CMS" /> 
+        </div>
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_7-of-12 slds-large-size_7-of-12">
+           <div class="slds-text-heading--large slds-p-top_small"><b>| Center for Medicare &amp; Medicaid Services</b></div>
+        </div>
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_2-of-12 slds-large-size_2-of-12">
+          <span class="slds-avatar slds-avatar--circle slds-avatar--medium">
+                  <img src="{!$Resource.avatar}" alt="person name" />
+                </span>
+        </div>
+       
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+            <span><p>.</p></span>
+        </div>
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-3">
+          <nav class="slds-nav-vertical" aria-label="Sub page">
+            <div class="slds-nav-vertical__section">
+              <ul aria-describedby="entity-header">
+                <li class="slds-nav-vertical__item">
+                    <a href="/Original/s/Home" class="slds-nav-vertical__action" aria-current="true">Home</a>
+                </li>
+                <li class="slds-nav-vertical__item slds-is-active">
+                    <a href="/Original/s/profile" class="slds-nav-vertical__action">Organization Profile</a>
+                </li>
+                <li class="slds-nav-vertical__item">
+                    <a href="/Original/s/application" class="slds-nav-vertical__action">Participant Application</a>
+                </li>
+                <li class="slds-nav-vertical__item">
+                  <a href="/Original/s/Files" class="slds-nav-vertical__action">Upload/Download Files</a>
+                </li>
+                <li class="slds-nav-vertical__item">
+                    <a href="/Original/s/Certify" class="slds-nav-vertical__action">Certify/Submit</a>
+                </li>
+                <li class="slds-nav-vertical__item">
+                  <a href="/Original/s/Support" class="slds-nav-vertical__action">Support/FAQ</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_2-of-3 slds-large-size_2-of-3">
+           <c:AppProfileLDS />
+        </div>
+        
+        
+  </div>    
+    
+    
+</aura:component>

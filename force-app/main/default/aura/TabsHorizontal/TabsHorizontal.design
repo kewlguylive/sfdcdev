@@ -1,0 +1,5 @@
+<design:component>
+	<design:attribute name="Tab1" label="Tab1" description="Name of the tab 1" />
+     <design:attribute name="Tab2" label="Tab2" description="Name of the tab 2" />
+     <design:attribute name="Tab3" label="Tab3" description="Name of the tab 3" />
+</design:component>

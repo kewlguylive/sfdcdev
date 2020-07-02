@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+     <div class="slds-grid slds-wrap slds-gutters">
+         
+         <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+           <div class="slds-grid slds-grid--vertical-stretch slds-grid--align-spread">
+               <img alt="CMS" src="{!$Resource.cms}" title="CMS" />
+               <div class="slds-text-heading--large slds-p-top_small"><b>| Center for Medicare &amp; Medicaid Services</b></div>
+               <span class="slds-avatar slds-avatar--circle slds-avatar--medium">
+                  <img src="{!$Resource.avatar}" alt="person name" />
+               </span>
+            </div>
+        </div>
+         
+         
+        
+         <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                 <div class="slds-box slds-theme_alt-inverse">
+                     <p class="slds-text-heading_medium"><Strong>Welcome to Newwave Application </Strong></p>
+                </div>
+         </div>
+         
+         
+    </div>
+</aura:component>

@@ -1,0 +1,122 @@
+<aura:component implements="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" controller="healthAppAuraController" access="global" description="c:ApplicantInfo component">
+    <aura:attribute name="firstname" type="String" />
+    <aura:attribute name="healthId" type="String" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="templink" type="String" />
+    <aura:attribute name="contentDocId" type="String" />
+    <aura:attribute name="isFileOpen" type="boolean" default="false"/>
+    <aura:attribute name="isContentOpen" type="boolean" default="false"/>
+    <aura:attribute type="ContentDocumentLink[]" name="fileList"/>
+    <aura:attribute type="ContentDocumentLink[]" name="contentList"/>
+    <aura:attribute type="String[]" name="tempList"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:attribute name="myCVcolumns" type="List"/>
+    <aura:attribute name="mytempcolumns" type="List"/>
+    
+    
+    <!-- Add an "init" handler to handle the first "v.pageReference" value -->
+    <aura:handler name="init" value="{!this}" action="{!c.onPageReferenceChange}"/>
+    <!-- Add a "change" handler to handle all changes to the "v.pageReference" value -->
+   <!-- <aura:handler name="change" value="{!v.pageReference}" action="{!c.onPageReferenceChange}"/> -->
+    <br/>
+    <aura:attribute name="healthApp" type="HealthApplication__c" />
+    <lightning:navigation aura:id="navService" />
+    <aura:attribute name="fields" type="List" default="['firstName']" />
+     <aura:attribute name="myRecordId" type="String" description="Record to which the files should be attached" />
+    
+   <div class="slds-grid">
+        
+       <lightning:tabset selectedTabId="two">
+        <lightning:tab label="Item One" id="one">
+            <lightning:fileCard fileId="069B00000073zXaIAI" description="Sample Description"/>
+            
+            <p>{!CurrentUser.communityNickname}</p>
+        </lightning:tab>
+        <lightning:tab label="Item Two" id="two">
+            Two Content !
+            <br/>
+            <aura:if isTrue="{!v.isFileOpen}">
+                
+             <section onclick="{!c.closeModel}"
+                 role="dialog"
+                 aria-modal="true"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__content slds-p-around_medium slds-text-align_center"
+                     style="background: transparent;">
+                    <div style="width: 80%; margin: 0 auto; text-align: left">
+                        <!--<lightning:fileCard> to preview file using content document Id -->
+                        <lightning:fileCard fileId="{!v.contentDocId}" description="Upload New Version"/>
+                    </div>
+                </div>
+               </div>
+            </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </aura:if>
+            <br/>
+            <lightning:fileUpload label="Attach receipt"
+                name="fileUploader"
+                multiple="true"
+                accept=".pdf, .png, .docx"
+                recordId="{!v.myRecordId}"
+                onuploadfinished="{!c.handleUploadFinished}" />
+            
+            <br/>
+            
+            <lightning:datatable data="{! v.fileList }"
+                         columns="{! v.mycolumns }"
+                         keyField="id"
+                         hideCheckboxColumn="true"
+                         onrowaction="{! c.handleRowAction }" />
+            
+        </lightning:tab>
+        <lightning:tab label="Item Three" id="three">
+            IP Template 
+            <br/>
+            
+            <lightning:formattedUrl label="IP Template" 
+                                           target="_blank" value="{! v.templink}" />
+            
+            
+            
+            <br/>
+            <lightning:fileUpload label="Attach receipt"
+                name="contentfileUploader"
+                multiple="true"
+                accept=".pdf, .png, .docx"
+                recordId="{!v.myRecordId}"
+                onuploadfinished="{!c.handleUploadFinished}" />
+            
+            <br/>
+            
+            <lightning:button label="Upgrade Deliverables" title="Upgrade Deliverables" onclick="{! c.handleClick }"/>
+            
+            <lightning:datatable data="{! v.contentList }"
+                         columns="{! v.myCVcolumns }"
+                         keyField="id"
+                         hideCheckboxColumn="true"
+                         onrowaction="{! c.handleRowAction }" />
+            
+            <aura:if isTrue="{!v.isContentOpen}">
+                
+             <section onclick="{!c.closeModel}"
+                 role="dialog"
+                 aria-modal="true"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__content slds-p-around_medium slds-text-align_center"
+                     style="background: transparent;">
+                    <div style="width: 80%; margin: 0 auto; text-align: left">
+                        <!--<lightning:fileCard> to preview file using content document Id -->
+                        <lightning:fileCard fileId="{!v.contentDocId}" description="Upload New Version"/>
+                    </div>
+                </div>
+               </div>
+            </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </aura:if>
+            
+        </lightning:tab>
+    </lightning:tabset>
+    </div>
+</aura:component>

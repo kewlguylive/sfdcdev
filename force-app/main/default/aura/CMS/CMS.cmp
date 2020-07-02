@@ -1,0 +1,133 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable" controller="LightningDataTableController" access="global" >
+    <aura:handler name="init" value="{!this}" action="{! c.init }"/>
+    <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:attribute name="url" type="String"/>
+    
+<div class="slds-grid">
+  
+  <div class="slds-col intro">
+      <div style='text-align:center;'>
+       <a href="http://www.cms.gov/" style="margin-bottom:7px !important;text-decoration:none;color:#686060;" title="CMS.gov Centers for Medicare &amp; Medicaid Services">
+         <img alt="Center for Medicare and Medicaid Innovation" src="/resource/cms"></img></a>
+     </div>
+      <div style="width:100%;text-align:center;">
+          <p>Centers for Medicare &amp; Medicaid Services </p>
+      </div>
+      <div style="width:100%;text-align:center;">
+          <p> </p>
+      </div>
+      <div style="width:100%;text-align:center;">
+          <p><br/></p>
+      </div>
+      <div style="width:100%;text-align:center;">
+         <h1 class="text-center login-title">Comprehensive ESRD Care Initiative Login</h1>
+      </div>
+      <div style="width:100%;text-align:center;">
+          <p><br/></p>
+      </div>
+      
+     
+      <div style="width:100%;text-align:center;">
+          <p><br/></p>
+      </div>
+      <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+          <div class="slds-size_1-of-5">
+          </div>
+          <div class="slds-size_3-of-5 infobox">
+              <h3 class="panel-title boldhead" style="font-weight:bold;">The Information System:</h3>
+              
+              <p>This warning banner provides privacy and security notices consistent with applicable federal laws, directives, and 
+                  other federal guidance for accessing this Government system, which includes (1) this computer network, (2) all 
+                  computers connected to this network, and (3) all devices and storage media attached to this network or to a computer 
+                  on this network. 
+                 This system is provided for Government-authorized use only. </p>
+              <br/>
+              <br/>
+              <p>Unauthorized or improper use of this system is prohibited and may result in disciplinary action and/or civil 
+                  and criminal penalties.</p>
+              <br/>
+              <p>Personal use of social media and networking sites on this system is limited as to not interfere with official work duties
+                  and is subject to monitoring.</p>
+              <br/>
+              <p>By using this system, you understand and consent to the following:
+                  • The Government may monitor, record, and audit your system usage, including usage of personal devices and email
+                  systems for official duties or to conduct HHS business. Therefore, you have no reasonable expectation of privacy
+                  regarding any communication or data transiting or stored on this system. At any time, and for any lawful Government
+                  purpose, the government may monitor, intercept, and search and seize any communication or data transiting or stored
+                  on this system.
+                  • Any communication or data transiting or stored on this system may be disclosed or used for any lawful Government
+                  purpose.
+              </p>
+              <br/>
+          </div>
+          <div class="slds-size_1-of-5">
+          </div>
+      </div>
+      <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+          <div class="slds-size_1-of-5">
+             
+          </div>
+          <div class="slds-size_3-of-5 infobox">
+              <div align="center">
+                  <lightning:button variant="brand" label="Start Application" title="Start Application" onclick="{! c.startApplication }" />
+              </div>
+                
+              <br/>
+              <div>
+                 <c:LightningDataTable />
+              </div>
+              <h3 class="panel-title boldhead" style="font-weight:bold;">Consent To Monitoring:</h3>
+              
+              <p>By logging onto this website, you consent to be monitored. Unauthorized attempts to upload information and/or change information on this web site are strictly prohibited and are subject to 
+                 prosecution under the Computer Fraud and Abuse Act of 1986 and Title 18 U.S.C. Sec.1001 and 1030. We encourage you to read the HHS Rules of Behavior for more details.    
+              </p>
+              <br/>
+          </div>
+          <div class="slds-size_1-of-5">
+          </div>
+      </div>
+      <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+          <div class="slds-size_1-of-5">
+          </div>
+          <div class="slds-size_3-of-5 infobox">
+              
+              <p>CMS will safeguard the information provided to us in accordance with the Privacy Act of 1974, as amended (5 U.S.C. Section 552a). For more information, please see the CMS Privacy 
+                 Policy.</p>
+              <br/>
+              <span style="font-weight:bold;">Technical Issues:</span><p>Please contact the CMMI Salesforce Help Desk at 1-888-734-6433, option 5 or email
+              CMMIForceSupport@cms.hhs.gov. If you are using Internet Explorer, please make sure the browser you are using
+              is IE 11 before attempting to navigate through this site. Prior versions of IE are not supported by Salesforce.</p>
+              <br/>
+              <span style="font-weight:bold;">508 Disclaimer: </span><p>If you use assistive technologies to navigate and access information, please contact the CMMI
+              Salesforce Help Desk at 1-888-734-6433, option 5 or email CMMIForceSupport@cms.hhs.gov.</p>
+              
+              <br/>
+              <br/>
+             <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+                  <div class="slds-size_1-of-5"><h3><b>CMS &amp; HHS Websites</b></h3>
+                  </div>
+                  <div class="slds-size_1-of-5"><h3><b>Tools</b></h3>
+                  </div>
+                  <div class="slds-size_2-of-5"><h3><b>Helpful Links</b></h3>
+                  </div>
+                  <div class="slds-size_1-of-5"><h3><b>Additional Helpful Links</b></h3>
+                  </div>
+              </div> 
+              <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+                  <div class="slds-size_1-of-5"><a href="http://www.medicare.gov" target="_blank" title="Medicare.gov">Medicare.gov</a>
+                  </div>
+                  <div class="slds-size_1-of-5"><a href="http://cms.gov/apps/acronyms/" rel="$rel" target="T91037" title="Acronyms">Acronyms</a>
+                  </div>
+                  <div class="slds-size_2-of-5"><a class="titlelink" href="http://cms.gov/About-CMS/Agency-Information/Aboutwebsite/index.html" target="_blank" title="Web Policies &amp; Important Links">Web Policies &amp; Important Links</a>
+                  </div>
+                  <div class="slds-size_1-of-5"><a href="http://www.hhs.gov" target="_blank" title="HHS.gov">HHS.gov</a>
+                  </div>
+              </div>
+          </div>
+          <div class="slds-size_1-of-5">
+          </div>
+      </div>
+  </div>   
+</div>
+</aura:component>

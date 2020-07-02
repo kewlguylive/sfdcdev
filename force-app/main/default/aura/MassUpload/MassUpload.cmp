@@ -1,0 +1,18 @@
+<aura:component controller="FileUploader" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+	<aura:attribute name="uploadType" type="String" />
+    <aura:attribute name="appName" type="String" />
+    <aura:attribute name="appId" type="String" />
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+   <div class="slds-grid slds-wrap">
+    <div class="slds-size_1-of-1">
+    <lightning:fileUpload label="Attach receipt"
+        name="fileUploader"
+        multiple="true"
+        accept=".pdf, .png"
+        recordId="{!v.appId}"
+        disabled="false"
+        onuploadfinished="{!c.handleUploadFinished}" />
+     </div>
+   </div>
+</aura:component>

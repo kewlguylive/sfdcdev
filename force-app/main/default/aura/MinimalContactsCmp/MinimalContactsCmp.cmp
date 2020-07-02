@@ -1,0 +1,63 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="cbaseURL" type="String"/> 
+    <aura:attribute name="isVertical" type="Boolean" default="false"/>
+    
+    
+    <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12"></div>
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered">
+                <thead>
+                <tr class="slds-text-title_caps">
+                <th scope="col"><div class="slds-truncate" title="Close Date">LOI #</div></th>
+                <th scope="col"><div class="slds-truncate" title="Account Name">RFA ID #</div></th>
+                <th scope="col"><div class="slds-truncate" title="Stage">Status</div></th>
+                <th scope="col"><div class="slds-truncate" title="Confidence">Email</div></th>
+                <th scope="col"><div class="slds-truncate" title="Contact">Action</div></th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                  <tr class="slds-hint-parent">
+                    <th scope="row" data-label="Opportunity Name">
+                    <div class="slds-truncate" title="Cloudhub">NWT-LOI-1095</div>
+                    </th>
+                    <td data-label="Account Name">
+                    <div class="slds-truncate" title="Cloudhub">NWT-RFA-1095</div>
+                    </td>
+                    <td data-label="Prospecting">
+                    <div class="slds-truncate" title="Prospecting">InProgress</div>
+                    </td>
+                    <td data-label="Confidence">
+                        <div class="slds-truncate" title="20%">info@newwave.io</div>
+                    </td>
+                    <td data-label="Contact">
+                    <div class="slds-truncate" title="application"><a href="/minimal/s/minimalapp2" class="slds-nav-vertical__action">Edit</a></div>
+                    </td>
+                  </tr>
+                
+                    <tr class="slds-hint-parent">
+                        <th scope="row" data-label="Opportunity Name">
+                        <div class="slds-truncate" title="Cloudhub + Anypoint Connectors">NWT-LOI-1096</div>
+                        </th>
+                        <td data-label="Account Name">
+                        <div class="slds-truncate" title="Cloudhub">NWT-LOI-1096</div>
+                        </td>
+                        <td data-label="Prospecting">
+                        <div class="slds-truncate" title="Prospecting">InProgress</div>
+                        </td>
+                        <td data-label="Confidence">
+                        <div class="slds-truncate" title="20%">info@cloudera.com</div>
+                        </td>
+                        <td data-label="Contact">
+                        <div class="slds-truncate" title="Action"><a href="/minimal/s/minimalapp2" class="slds-nav-vertical__action">Edit</a></div>
+                        </td>
+                    </tr>
+
+               </tbody>
+            </table>
+        </div>
+        <div class="slds-col slds-small-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12"></div>
+    </div>
+</aura:component>
