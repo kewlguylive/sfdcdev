@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="List of Opportunities">
+        <lightning-layout>
+            <lightning-layout-item size="6">
+                <!-- Displaying Oppties. -->
+                <div class="slds-p-left_medium">
+                   <template for:each={lstOppties} for:item="opp">
+                        <div key={opp.Id} class="slds-p-around_medium lgc-bg">
+                            <lightning-tile label={opp.Name} type="media">
+                                <lightning-icon slot="media" icon-name="standard:groups"></lightning-icon>
+                                <p class="slds-truncate">
+                                    <lightning-formatted-text value={opp.AccountId}></lightning-formatted-text>
+                                </p>
+                            </lightning-tile>
+                        </div>
+                    </template>
+                    
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
